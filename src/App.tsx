@@ -1,11 +1,19 @@
-import React from "react";
-
-import { Document } from "crdom";
-
-const doc = new Document("My First Document");
+/** @jsxImportSource @emotion/react */
+import Document from "./components/Document/Document";
+import { css, SerializedStyles } from "@emotion/react";
 
 function App() {
-  return <div className="App">{doc.name}</div>;
+  return (
+    <div css={containerStyle}>
+      <Document></Document>
+    </div>
+  );
 }
+
+const containerStyle: SerializedStyles = css`
+  width: 90%;
+  margin: auto;
+  max-width: 1600px;
+`;
 
 export default App;
